@@ -44,13 +44,19 @@ var
 // method i2cSend: utility function to wrap i2c.writeBytes 
 //   cmd is one of the PCA9685 addresses above, values is context dependent on which command
 //   see the PCA9685 datasheet for details
+
 i2cSend = function (i2c, cmd, values) {
-    if (!(values instanceof Array))
-        values = [values];
-    i2c.writeBytes(cmd, values, function (error) {
-        if (error != null)
-            console.log("I2C error", error);
-    });
+	return new Promise(function(resolve, reject) {
+		if (!(values instanceof Array)) {
+			values = [values];
+		}
+		i2c.writeBytes(cmd, values, function(error) {
+			if (error != null)
+				reject(error)
+			else
+				resolve()
+		});
+	})
 }
 
 // method i2cRead(): utility to wrap i2c.readBytes

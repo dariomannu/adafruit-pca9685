@@ -1,6 +1,6 @@
 {
-  "name": "adafruit-pca9685",
-  "version": "0.1.5",
+  "name": "@dariomannu/adafruit-pca9685",
+  "version": "0.2.0",
   "main": "adafruit-pca9685.js",
   "author": {
     "name": "John Treacy"
@@ -10,7 +10,7 @@
     "i2c": ">0.1.4",
     "sleep": ">1.1.3"
   },
-  "repository": "https://github.com/johntreacy/adafruit-pca9685.git",
+  "repository": "https://github.com/dariomannu/adafruit-pca9685.git",
   "license": "MIT",
   "readme": "Adafruit PWM"
 }
